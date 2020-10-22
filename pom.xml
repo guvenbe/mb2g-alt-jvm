@@ -28,15 +28,30 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version><!-- 3.1 is the minimum -->
-                <configuration>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
-                    <compilerArguments>
-                        <indy/><!-- optional; supported by batch 2.4.12-04+ -->
-                        <configScript>config.groovy</configScript><!-- optional; supported by batch 2.4.13-02+ -->
-                    </compilerArguments>
-                </configuration>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>addSources</goal>
+                            <goal>addTestSources</goal>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.0</version>&lt;!&ndash; 3.1 is the minimum &ndash;&gt;-->
+<!--                <configuration>-->
+<!--                    <compilerId>groovy-eclipse-compiler</compilerId>-->
+<!--                    <compilerArguments>-->
+<!--                        <indy/>&lt;!&ndash; optional; supported by batch 2.4.12-04+ &ndash;&gt;-->
+<!--                        <configScript>config.groovy</configScript>&lt;!&ndash; optional; supported by batch 2.4.13-02+ &ndash;&gt;-->
+<!--                    </compilerArguments>-->
+<!--                </configuration>-->
                 <dependencies>
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
